@@ -3,11 +3,12 @@ import { Navbar, Nav } from 'react-bootstrap'
 export const Navigation = () => {
   return (
     <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar.Brand href="#home">Edward Reyes</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">About</Nav.Link>
-        <Nav.Link href="#pricing">Portfolio</Nav.Link>
+        <Nav.Link href="#about">About</Nav.Link>
+        <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+        <Nav.Link href="#contact">contact</Nav.Link>
       </Nav>
     </Navbar>
   )
