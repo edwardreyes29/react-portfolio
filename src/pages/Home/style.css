@@ -5,6 +5,14 @@
   margin-left: 15%;
 }
 
-.experience-task:before {
-  content: '✓ ';
+/* .experience-task:before {
+  content: '✓';
+} */
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.card-text {
+  font-family: 'Roboto Condensed', sans-serif;
 }

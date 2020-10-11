@@ -1,5 +1,7 @@
 import React from 'react';
-import { Navbar, Nav, Badge } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Navbar, Nav, Badge, Image } from 'react-bootstrap';
+import logoWhite from '../../assets/svg/logo-white.svg';
 import './style.css';
 
 const styles = {
@@ -8,17 +10,34 @@ const styles = {
   },
   links: {
     fontSize: '20px',
+  },
+  background: {
+    background: '#121212'
   }
 }
 
 export const Navigation = () => {
   return (
-    <Navbar bg='dark' variant='dark'>
-      <Navbar.Brand href='#home' className='brand-name' style={styles.brand}>Edward Reyes</Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href='#home' style={styles.links}>Home</Nav.Link>
-        <Nav.Link href='#portfolio' style={styles.links}>Portfolio</Nav.Link>
-        <Nav.Link href='#contact' style={styles.links}>contact</Nav.Link>
+    <Navbar variant='dark' fixed='top' style={styles.background}>
+      <Navbar.Brand href='#home' className='brand-name' style={styles.brand}>
+      <Image src={logoWhite} style={{width: '45px'}}/>
+      </Navbar.Brand>
+      <Nav className='mr-auto navigation-links' style={{textTransform: 'uppercase'}}>
+        <Nav.Link style={styles.links}>
+          <Link to='/' style={{textDecoration: 'none', color: '#fff'}}>
+            Home
+          </Link>
+        </Nav.Link>
+        <Nav.Link style={styles.links}>
+          <Link to='/portfolio' style={{textDecoration: 'none', color: '#fff'}}>
+            Portfolio
+          </Link>
+        </Nav.Link>
+        <Nav.Link style={styles.links}>
+          <Link to='/contact' style={{textDecoration: 'none', color: '#fff'}}>
+            Contact
+          </Link>
+        </Nav.Link>
       </Nav>
     </Navbar>
   )
