@@ -1,0 +1,10 @@
+.about-container {
+  background: 'red';
+  color: 'green';
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.experience-task:before {
+  content: '✓ ';
+}

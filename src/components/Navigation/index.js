@@ -17,7 +17,6 @@ export const Navigation = () => {
       <Navbar.Brand href='#home' className='brand-name' style={styles.brand}>Edward Reyes</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href='#home' style={styles.links}>Home</Nav.Link>
-        <Nav.Link href='#about' style={styles.links}>About</Nav.Link>
         <Nav.Link href='#portfolio' style={styles.links}>Portfolio</Nav.Link>
         <Nav.Link href='#contact' style={styles.links}>contact</Nav.Link>
       </Nav>
