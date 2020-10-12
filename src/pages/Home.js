@@ -14,14 +14,18 @@ import DeveloperBoardIcon from '@material-ui/icons/DeveloperBoard';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import FaceIcon from '@material-ui/icons/Face';
 // Assets
-import jumbotronWallpaper from '../../assets/images/jumbotron-wallpaper.jpg';
-import csunLogo from '../../assets/svg/csun-logo.svg';
+import jumbotronWallpaper from '../assets/images/jumbotron-wallpaper.jpg';
+import csunLogo from '../assets/svg/csun-logo.svg';
 
 
 
-import './style.css';
+// import './style.css';
 
 const styles = {
+  sectionStyle: {
+    fontFamily: 'Roboto Condensed, sans-serif',
+    textAlign: 'center'
+  },
   jumbotronText: {
     fontSize: '18px',
     // textTransform: 'uppercase'
@@ -48,13 +52,15 @@ const styles = {
     backgroundColor: '#40916C',
     // backgroundImage: `url(${jumbotronWallpaper})`,
     // backgroundAttachment: 'fixed',
-    color: '#fff'
+    color: '#fff',
+    fontFamily: 'Roboto Condensed, sans-serif',
+    textAlign: 'center'
   }
 }
 
-export const Home = () => {
+const Home = () => {
   return (<>
-    <Jumbotron fluid className='text-center' style={styles.jumbotron}>
+    <Jumbotron fluid style={styles.jumbotron}>
       <Container className='mt-2'>
         <h1>Hello, my name is Edward Reyes</h1>
         <p style={styles.jumbotronText}>Software Developer & Full-Stack Web Developer</p>
@@ -77,7 +83,7 @@ export const Home = () => {
         </Row>
       </Container>
     </Jumbotron>
-    <Container>
+    <Container style={styles.sectionStyle}>
       <section id='about-section' className='text-center'>
         <div className='about-container'>
           <ExpandMoreIcon style={styles.expandMore} />
@@ -232,3 +238,5 @@ export const Home = () => {
     </Container>
   </>)
 }
+
+export default Home;
