@@ -6,10 +6,9 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
 import InfoIcon from '@material-ui/icons/Info';
 // Components
-import { ProjectCarousel } from '../ProjectCarousel';
+import ProjectCarousel from './ProjectCarousel';
 
-import './style.css';
-export default function ProjectModal({hoverState, data}) {
+const ProjectModal = ({hoverState, data}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -70,3 +69,5 @@ export default function ProjectModal({hoverState, data}) {
     </>
   );
 }
+
+export default ProjectModal;
