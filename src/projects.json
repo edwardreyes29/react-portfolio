@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Secure Travel App",
+    "description": "A travel app that advises the user where they should travel based on Coronavirus risk recommendations",
+    "images": [
+      "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/world-cases.png",
+      "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/us-cases.png",
+      "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/news.png",
+      "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/hotel-listings.png"
+    ],
+    "links": {
+      "deployed": "https://edwardreyes29.github.io/project-1/",
+      "github": "https://github.com/edwardreyes29/project-1"
+    }
+  },
+  {
+    "name": "Employee Directory Using React",
+    "description": "This is an employee directory created using React.js.",
+    "images": [
+      "https://raw.githubusercontent.com/edwardreyes29/Employee_Directory/master/assets/main.png",
+      "https://raw.githubusercontent.com/edwardreyes29/Employee_Directory/master/assets/search-dob.png",
+      "https://raw.githubusercontent.com/edwardreyes29/Employee_Directory/master/assets/search-name.png",
+      "https://raw.githubusercontent.com/edwardreyes29/Employee_Directory/master/assets/search-phone.png"
+    ],
+    "links": {
+      "deployed": "https://determined-kowalevski-974a9d.netlify.app/",
+      "github": "https://github.com/edwardreyes29/Employee_Directory"
+    }
+  }
+]

@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react';
 // Bootstrap
-import { Container, Jumbotron, Row, Col, Card } from 'react-bootstrap';
+import { Container, Jumbotron, Row, Col, Card, Image, Badge, Button } from 'react-bootstrap';
 // Marterial-UI Icons
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SchoolIcon from '@material-ui/icons/School';
-import './style.css';
 import { CodeOutlined } from '@material-ui/icons';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import WebIcon from '@material-ui/icons/Web';
 import CodeIcon from '@material-ui/icons/Code';
 import StorageIcon from '@material-ui/icons/Storage';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
+import DeveloperBoardIcon from '@material-ui/icons/DeveloperBoard';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import FaceIcon from '@material-ui/icons/Face';
+// Assets
 import jumbotronWallpaper from '../../assets/images/jumbotron-wallpaper.jpg';
+import csunLogo from '../../assets/svg/csun-logo.svg';
+
+import ProjectCard from '../../components/Card';
+// import Backdrop from '../../components/Backdrop';
+
+// Data
+import projects from '../../projects.json';
+
+import './style.css';
 
 const styles = {
   jumbotronText: {
@@ -37,7 +49,7 @@ const styles = {
     fontSize: 100
   },
   jumbotron: {
-    backgroundColor: '#52b788',
+    backgroundColor: '#40916C',
     // backgroundImage: `url(${jumbotronWallpaper})`,
     // backgroundAttachment: 'fixed',
     color: '#fff'
@@ -46,25 +58,25 @@ const styles = {
 
 export const Home = () => {
   return (<>
-    <Jumbotron fluid className='text-center mt-5' style={styles.jumbotron}>
-      <Container className='mt-2' style={{textTransform: 'uppercase'}}>
-        <h1>Hi I'm Edward. Nice to meet you.</h1>
+    <Jumbotron fluid className='text-center' style={styles.jumbotron}>
+      <Container className='mt-2'>
+        <h1>Hello, my name is Edward Reyes</h1>
         <p style={styles.jumbotronText}>Software Developer & Full-Stack Web Developer</p>
         <Row>
           <Col>
-            <LaptopMacIcon style={styles.icon}/>
+            <LaptopMacIcon style={styles.icon} />
           </Col>
           <Col>
-            <WebIcon style={styles.icon}/>
+            <WebIcon style={styles.icon} />
           </Col>
           <Col>
-            <CodeIcon style={styles.icon}/>
+            <CodeIcon style={styles.icon} />
           </Col>
           <Col>
-            <DeveloperModeIcon style={styles.icon}/>
+            <DeveloperModeIcon style={styles.icon} />
           </Col>
           <Col>
-            <StorageIcon style={styles.icon}/>
+            <StorageIcon style={styles.icon} />
           </Col>
         </Row>
       </Container>
@@ -73,7 +85,8 @@ export const Home = () => {
       <section id='about-section' className='text-center'>
         <div className='about-container'>
           <ExpandMoreIcon style={styles.expandMore} />
-          <h2 style={{textTransform: 'uppercase'}}>About Me</h2>
+          {/* <FaceIcon style={styles.laptop} /> */}
+          <h2 style={{ textTransform: 'uppercase' }}>About Me</h2>
           <p className='text-left'>
             I am a Full-Stack Web Developer with a Bachelor’s in Computer Science
             from California State University, Northridge (CSUN). I am an experienced problem-solver in Software
@@ -125,10 +138,10 @@ export const Home = () => {
         </Row>
       </section>
 
-      <section className='text-center mb-3'>
+      <section className='text-center mb-3 border-top main-text-font'>
         <LaptopMacIcon style={styles.laptop} />
-        <h2>Work Experience</h2>
-        <Row xs={1} md={2} className='text-left card-text'>
+        <h2 style={{ textTransform: 'uppercase' }}>Work Experience</h2>
+        <Row xs={1} md={2} className='text-left main-text-font'>
           <Col className='d-flex justify-content-center'>
             <Card style={{ width: '100%' }}>
               <Card.Body>
@@ -141,16 +154,16 @@ export const Home = () => {
                 </Card.Subtitle>
                 <Card.Text>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
+                    <span style={{ color: '#40916C' }}>✓</span>
                     Guided students to understand different subjects in Computer Science
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
-                    Communicated core concepts to students to help them find their own 
+                    <span style={{ color: '#40916C' }}>✓</span>
+                    Communicated core concepts to students to help them find their own
                     solution to their projects and assignments
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
+                    <span style={{ color: '#40916C' }}>✓</span>
                     Coordinated study sessions, study schedules, and study methods for students
                   </p>
                 </Card.Text>
@@ -169,33 +182,64 @@ export const Home = () => {
                 </Card.Subtitle>
                 <Card.Text>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
-                    Assembled a web page using HTML, CSS, JavaScript, and SVG assets to make an 
+                    <span style={{ color: '#40916C' }}>✓</span>
+                    Assembled a web page using HTML, CSS, JavaScript, and SVG assets to make an
                     interactive Self-Exploration page.
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
-                    Used HTML to display the information from a Self-Exploration written script 
+                    <span style={{ color: '#40916C' }}>✓</span>
+                    Used HTML to display the information from a Self-Exploration written script
                     and also to add links to other Career Center resources
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
-                    Used CSS for creating animations like hover effects, color shifts, and 
+                    <span style={{ color: '#40916C' }}>✓</span>
+                    Used CSS for creating animations like hover effects, color shifts, and
                     static animations.
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
-                    Used JavaScript to create onclick events to add classes to specific HTML 
+                    <span style={{ color: '#40916C' }}>✓</span>
+                    Used JavaScript to create onclick events to add classes to specific HTML
                     elements in order to trigger certain animations.
                   </p>
                   <p>
-                    <span style={{color: '#40916C'}}>✓</span>
+                    <span style={{ color: '#40916C' }}>✓</span>
                     Used Adobe XD to create several prototypes for the design of the Self-Exploration page and to edit or
                     create new SVG elements to add to the design of the web page.
                   </p>
                 </Card.Text>
               </Card.Body>
             </Card>
+          </Col>
+        </Row>
+        <div className='linkedIn-link d-flex justify-content-center mt-3 main-text-font'>
+
+          <Badge pill style={{ backgroundColor: '#40916C', borderColor: '#40916C' }}>
+            <a className='m-2' href='https://www.linkedin.com/in/edwardtreyes/' target='_blank'
+              style={{color: '#fff', fontSize: '25px'}}
+            >
+              Visit me on LinkedIn
+              </a>
+            {/* <span style={{fontSize: '20px'}}>Visit me on LinkedIn</span> */}
+          </Badge>
+
+        </div>
+      </section>
+
+      <section className='text-center mb-3 border-top main-text-font'>
+        <AssignmentTurnedInIcon style={styles.laptop} />
+        <h2 style={{ textTransform: 'uppercase' }}>Recent Projects</h2>
+        <Row xs={1} md={2}>
+          {projects.map(project =>
+            (<Col><ProjectCard data={project} /></Col>)
+          )}
+        </Row>
+      </section>
+
+      <section className='text-center border-top main-text-font'>
+        <h3 className='mt-3'>I am proud to have worked and studied at CSUN.</h3>
+        <Row>
+          <Col>
+            <Image src={csunLogo} style={{ width: '300px' }} />
           </Col>
         </Row>
       </section>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 // import './App.css';
 import { Navigation } from './components/Navigation';
 import { Home } from './pages/Home';
+import { Portfolio } from './pages/Portfolio';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/portfolio" component={Portfolio} />
         </Switch>
       </div>
       <Footer/>
