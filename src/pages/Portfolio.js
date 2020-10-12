@@ -1,17 +1,23 @@
 import React from 'react';
+
 // Bootstrap
 import { Container, Jumbotron, Row, Col, Image, Badge} from 'react-bootstrap';
 // Material-UI Icons
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // Components
-import Card from '../../components/Card';
+import Card from '../components/Card';
 // import Backdrop from '../../components/Backdrop';
 
 // Data
-import projects from '../../projects.json';
+import projects from '../projects.json';
+
 
 const styles = {
+  sectionStyle: {
+    fontFamily: 'Roboto Condensed, sans-serif',
+    textAlign: 'center'
+  },
   jumbotronText: {
     fontSize: '18px',
     // textTransform: 'uppercase'
@@ -29,9 +35,12 @@ const styles = {
   expandMoreIcon: {
     color: '#40916C',
     fontSize: 60,
+  },
+  sectionHeading: {
+    textTransform: 'uppercase'
   }
 }
-export const Portfolio = () => {
+const Portfolio = () => {
   return (<>
     {/* {console.log(projects)} */}
     {/* <Jumbotron fluid className='text-center' style={styles.jumbotron}>
@@ -39,10 +48,10 @@ export const Portfolio = () => {
         <h1>Projects</h1>
       </Container>
     </Jumbotron> */}
-    <Container className='main-text-font'>
-      <section className='text-center'>
+    <Container >
+      <section style={styles.sectionStyle}>
         <ExpandMoreIcon style={styles.expandMoreIcon}/>
-        <h2>My recent work</h2>
+        <h2 style={styles.sectionHeading}>My recent work</h2>
         <Row xs={1} md={2}>
           {projects.map(project => 
             (<Col><Card data={project} /></Col>) 
@@ -52,3 +61,5 @@ export const Portfolio = () => {
     </Container>
   </>)
 }
+
+export default Portfolio;

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card } from 'react-bootstrap';
 // Components
-import Modal from '../Modal';
-import abstract from '../../assets/images/jumbotron-wallpaper.jpg';
+import Modal from './Modal';
+import abstract from '../assets/images/jumbotron-wallpaper.jpg';
 
 // Materialize-UI Icons
 import LaunchIcon from '@material-ui/icons/Launch';
 
-import './style.css';
 
-export default function ProjectCard({ data }) {
+const ProjectCard = ({ data }) => {
   const [hover, setHover] = useState(false);
   const [close, setClose] = useState(false);
   useEffect(() => {
@@ -107,3 +106,5 @@ export default function ProjectCard({ data }) {
     </Card>
   );
 }
+
+export default ProjectCard;
