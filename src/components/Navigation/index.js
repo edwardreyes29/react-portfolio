@@ -36,11 +36,11 @@ export const Navigation = () => {
               Home
             </Link>
           </Nav.Link>
-          {/* <Nav.Link style={styles.links}>
-            <Link to='/portfolio' style={{textDecoration: 'none', color: '#fff'}}>
+          <Nav.Link style={styles.links}>
+            <Link to='/portfolio' style={{ color: '#fff'}}>
               Portfolio
             </Link>
-          </Nav.Link> */}
+          </Nav.Link>
           <Nav.Link style={styles.links}>
             <Link to='/contact' style={{ color: '#fff'}}>
               Contact

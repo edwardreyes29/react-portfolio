@@ -17,11 +17,7 @@ import FaceIcon from '@material-ui/icons/Face';
 import jumbotronWallpaper from '../../assets/images/jumbotron-wallpaper.jpg';
 import csunLogo from '../../assets/svg/csun-logo.svg';
 
-import ProjectCard from '../../components/Card';
-// import Backdrop from '../../components/Backdrop';
 
-// Data
-import projects from '../../projects.json';
 
 import './style.css';
 
@@ -104,7 +100,7 @@ export const Home = () => {
         <Row xs={1} md={2} className='pl-4 pr-4'>
           <Col className='text-center'>
             <SchoolIcon style={styles.skills} />
-            <h3>Education</h3>
+            <h2>Education</h2>
             <div className='text-left ml-5'>
               <p className='mb-0'>B.S. Computer Science & Software Development</p>
               <p>California State University, Northridge | 2019</p>
@@ -223,16 +219,6 @@ export const Home = () => {
           </Badge>
 
         </div>
-      </section>
-
-      <section className='text-center mb-3 border-top main-text-font'>
-        <AssignmentTurnedInIcon style={styles.laptop} />
-        <h2 style={{ textTransform: 'uppercase' }}>Recent Projects</h2>
-        <Row xs={1} md={2}>
-          {projects.map(project =>
-            (<Col><ProjectCard data={project} /></Col>)
-          )}
-        </Row>
       </section>
 
       <section className='text-center border-top main-text-font'>
