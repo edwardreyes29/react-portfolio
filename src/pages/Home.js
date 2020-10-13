@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 // Bootstrap
 import { Container, Jumbotron, Row, Col, Card, Image, Badge, Button } from 'react-bootstrap';
 // Marterial-UI Icons
@@ -17,12 +18,16 @@ import FaceIcon from '@material-ui/icons/Face';
 import jumbotronWallpaper from '../assets/images/jumbotron-wallpaper.jpg';
 import csunLogo from '../assets/svg/csun-logo.svg';
 
-
+// Components
+import ProjectCard from '../components/Card';
+import CustomButton from '../components/Button';
+// Data
+import projects from '../projects.json';
 
 // import './style.css';
 
 const styles = {
-  sectionStyle: {
+  textStyle: {
     fontFamily: 'Roboto Condensed, sans-serif',
     textAlign: 'center'
   },
@@ -44,7 +49,7 @@ const styles = {
   heading4: {
     fontSize: '18px'
   },
-  laptop: {
+  headingIcon: {
     color: '#40916C',
     fontSize: 100
   },
@@ -59,6 +64,9 @@ const styles = {
 }
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (<>
     <Jumbotron fluid style={styles.jumbotron}>
       <Container className='mt-2'>
@@ -83,8 +91,8 @@ const Home = () => {
         </Row>
       </Container>
     </Jumbotron>
-    <Container style={styles.sectionStyle}>
-      <section id='about-section' className='text-center'>
+    <Container style={styles.textStyle}>
+      <section id='about-section' className='mb-3'>
         <div className='about-container'>
           <ExpandMoreIcon style={styles.expandMore} />
           {/* <FaceIcon style={styles.laptop} /> */}
@@ -115,7 +123,7 @@ const Home = () => {
             </div>
           </Col>
           <Col className='text-center border-left'>
-            <CodeOutlined style={styles.skills} />
+            <CodeOutlined style={styles.headingIcon} />
             <h3>Skills</h3>
             <h4 className='mb-0 font-weight-bold' style={styles.heading4}>
               Languages
@@ -140,18 +148,18 @@ const Home = () => {
         </Row>
       </section>
 
-      <section className='text-center mb-3 border-top main-text-font'>
-        <LaptopMacIcon style={styles.laptop} />
+      <section className='mb-3 border-top'>
+        <LaptopMacIcon style={styles.headingIcon} />
         <h2 style={{ textTransform: 'uppercase' }}>Work Experience</h2>
-        <Row xs={1} md={2} className='text-left main-text-font'>
+        <Row xs={1} md={2} className='text-left'>
           <Col className='d-flex justify-content-center'>
             <Card style={{ width: '100%' }}>
               <Card.Body>
                 <Card.Title>Computer Science Tutor</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className='mb-2' style={{color: '#2d6a4f'}}>
                   California State University, Northridge | CECS Tutorial Center
                 </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className='mb-2' style={{color: '#2d6a4f'}}>
                   Feb 2018 - Dec 2018
                 </Card.Subtitle>
                 <Card.Text>
@@ -176,10 +184,10 @@ const Home = () => {
             <Card style={{ width: '100%' }}>
               <Card.Body>
                 <Card.Title>Web Developer</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className='mb-2' style={{color: '#2d6a4f'}}>
                   California State University, Northridge | Career Center
                 </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className='mb-2' style={{color: '#2d6a4f'}}>
                   Feb 2019 - Dec 2019
                 </Card.Subtitle>
                 <Card.Text>
@@ -213,21 +221,42 @@ const Home = () => {
             </Card>
           </Col>
         </Row>
-        <div className='linkedIn-link d-flex justify-content-center mt-3 main-text-font'>
-
+        {/* <div className='d-flex justify-content-center mt-3'>
           <Badge pill style={{ backgroundColor: '#40916C', borderColor: '#40916C' }}>
             <a className='m-2' href='https://www.linkedin.com/in/edwardtreyes/' target='_blank'
-              style={{color: '#fff', fontSize: '25px'}}
-            >
+              style={{ color: '#fff', fontSize: '20px' }}>
               Visit me on LinkedIn
-              </a>
-            {/* <span style={{fontSize: '20px'}}>Visit me on LinkedIn</span> */}
+            </a>
           </Badge>
-
+        </div> */}
+        <div className='mt-4 mb-4'>
+          <CustomButton title='Visit me on LinkedIn' link='https://www.linkedin.com/in/edwardtreyes/'/>
         </div>
       </section>
 
-      <section className='text-center border-top main-text-font'>
+      <section className='mb-3 border-top'>
+        <WebIcon style={styles.headingIcon} />
+        <h2 style={styles.sectionHeading}>My recent work</h2>
+        <Row xs={1} md={3}>
+          {projects.slice(0, 6).map(project =>
+            (<Col className='mb-3'><ProjectCard data={project} /></Col>)
+          )}
+        </Row>
+        <h3>Here are a few design projects I've worked on recently. Want to see more?</h3>
+        {/* <div className='d-flex justify-content-center mt-3'>
+          <Badge pill style={{ backgroundColor: '#40916C', borderColor: '#40916C' }}>
+            <Link to='/portfolio' className='m-2'
+              style={{ color: '#fff', fontSize: '20px' }}>
+              Visit my portfolio
+            </Link>
+          </Badge>
+        </div> */}
+        <div className='mt-4 mb-4'>
+          <CustomButton title='Visit my portfolio' path='/portfolio'/>
+        </div>
+      </section>
+
+      <section className='mb-3 mt-3 border-top'>
         <h3 className='mt-3'>I am proud to have worked and studied at CSUN.</h3>
         <Row>
           <Col>
@@ -235,7 +264,23 @@ const Home = () => {
           </Col>
         </Row>
       </section>
+
     </Container>
+    <Jumbotron fluid style={styles.jumbotron} className='mb-0'>
+      <Container className='mt-2'>
+      <section className='mt-5'>
+        <h2>Have a question or interested in collaborating?</h2>
+        <h3>I’m always open to discussing new project ideas or partnership opportunities.</h3>
+        <Link to='/contact'>
+          <Button variant='outline-light'>
+            <span className='pl-2 pr-2 pt-3 pb-3' style={{fontSize: '18px'}}>
+              Start a conversation
+            </span>
+          </Button>
+        </Link>
+      </section>
+      </Container>
+    </Jumbotron>
   </>)
 }
 

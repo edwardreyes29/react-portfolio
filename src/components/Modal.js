@@ -7,6 +7,7 @@ import LaunchIcon from '@material-ui/icons/Launch';
 import InfoIcon from '@material-ui/icons/Info';
 // Components
 import ProjectCarousel from './ProjectCarousel';
+import CustomButton from './Button';
 
 const ProjectModal = ({hoverState, data}) => {
   const [show, setShow] = useState(false);
@@ -61,9 +62,10 @@ const ProjectModal = ({hoverState, data}) => {
               GitHub
             </a>
           </div>
-          <Button style={{background: '#40916C', border: '#40916C'}} onClick={handleClose}>
+          {/* <Button style={{background: '#40916C', border: '#40916C'}} onClick={handleClose}>
             Close
-          </Button>
+          </Button> */}
+          <CustomButton title='Close' onClick={handleClose}/>
         </Modal.Footer>
       </Modal>
     </>

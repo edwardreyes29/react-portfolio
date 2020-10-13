@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Row, Col } from 'react-bootstrap';
 // Components
 import Modal from './Modal';
 import abstract from '../assets/images/jumbotron-wallpaper.jpg';
 
 // Materialize-UI Icons
 import LaunchIcon from '@material-ui/icons/Launch';
-
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const ProjectCard = ({ data }) => {
   const [hover, setHover] = useState(false);
@@ -56,52 +56,42 @@ const ProjectCard = ({ data }) => {
         style={cardStyle}
         onMouseEnter={hoverTrue} onMouseLeave={hoverFalse}
       >
-        <Card.Body>
           <Card.Title>{data.name}</Card.Title>
           <Card.Text>{data.description}</Card.Text>
-          <div className='mb-2'>
-            <Modal 
-              hoverState={toggleClose} 
-              data={data}
-            />
-          </div>
-          {/* <div>
-            <a 
-              href={data.links.deployed} 
-              target='_blank'
-              style={{textDecoration: 'none', color: '#fff'}}
-            >
-              <Button variant='outline-light'>Visit site</Button>
-            </a>
-          </div> */}
-          <Button variant='outline-light'>
-            <LaunchIcon />
-            <a
-              href={data.links.deployed} target='_blank'
-              style={{ textDecoration: 'none', color: 'inherit' }}
-              className='ml-1'
-            >
-              Website
-            </a>
-          </Button>
-        </Card.Body>
-        {/* {hover ? (<>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
-          </Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
-          <Modal />
-        </>) : (
-          <Card.Title 
-            style={{fontSize: '30px', background: 'rgba(0,0,0,0.7)', width: '100%'}}
-            className='text-center p-3'
-          >
-            Project Title
-          </Card.Title>
-        )} */}
-
+          <Row className='mb-2'>
+            <Col>
+              <Modal 
+                hoverState={toggleClose} 
+                data={data}
+              />
+            </Col>
+            <Col>
+              {data.links.deployed && (
+                <Button variant='outline-light'>
+                  <LaunchIcon />
+                  <a
+                    href={data.links.deployed} target='_blank'
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                    className='ml-1'
+                  >
+                    Website
+                  </a>
+                </Button>
+              )}
+              {data.links.youtube && (
+                <Button variant='outline-light'>
+                  <YouTubeIcon />
+                  <a
+                    href={data.links.youtube} target='_blank'
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                    className='ml-1'
+                  >
+                    Demo
+                  </a>
+                </Button>
+              )}
+            </Col>
+          </Row>
       </Card.ImgOverlay>
     </Card>
   );
