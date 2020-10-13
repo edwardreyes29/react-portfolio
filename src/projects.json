@@ -1,7 +1,7 @@
 [
   {
     "name": "Secure Travel App",
-    "description": "A travel app that advises the user where they should travel based on Coronavirus risk recommendations",
+    "description": "A travel app that advises where to travel based on Coronavirus risk recommendations",
     "images": [
       "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/world-cases.png",
       "https://raw.githubusercontent.com/edwardreyes29/portfolio/master/assets/images/project-1/us-cases.png",
@@ -73,8 +73,8 @@
     }
   },
   {
-    "name": "Eat-Dat-Burger MySQL Express.js App",
-    "description": "Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.",
+    "name": "Eat-Dat-Burger App",
+    "description": "A restaurant app that lets users input the names of burgers they'd like to eat.",
     "images": [
       "https://raw.githubusercontent.com/edwardreyes29/Eat-Da-Burger/master/assets/main.png",
       "https://raw.githubusercontent.com/edwardreyes29/Eat-Da-Burger/master/assets/devour.png",
@@ -109,7 +109,7 @@
     "links": { "deployed": "https://afternoon-reef-26658.herokuapp.com/", "github": "https://github.com/edwardreyes29/note_taker" }
   },
   {
-    "name": "Employee Tracker using Node.js MySQL and Inquirer",
+    "name": "Employee Tracker App",
     "description": "This app is an Content Management Systems built with Node.js.",
     "images": [
       "https://raw.githubusercontent.com/edwardreyes29/EmployeeTracker/master/assets/main.png",

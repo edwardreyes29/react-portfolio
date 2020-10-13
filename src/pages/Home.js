@@ -60,6 +60,9 @@ const styles = {
     color: '#fff',
     fontFamily: 'Roboto Condensed, sans-serif',
     textAlign: 'center'
+  },
+  sectionHeading: {
+    textTransform: 'uppercase'
   }
 }
 
@@ -70,7 +73,7 @@ const Home = () => {
   return (<>
     <Jumbotron fluid style={styles.jumbotron}>
       <Container className='mt-2'>
-        <h1>Hello, my name is Edward Reyes</h1>
+        <h1 style={{ textTransform: 'uppercase' }}>Hello, my name is Edward Reyes</h1>
         <p style={styles.jumbotronText}>Software Developer & Full-Stack Web Developer</p>
         <Row>
           <Col>
@@ -96,7 +99,7 @@ const Home = () => {
         <div className='about-container'>
           <ExpandMoreIcon style={styles.expandMore} />
           {/* <FaceIcon style={styles.laptop} /> */}
-          <h2 style={{ textTransform: 'uppercase' }}>About Me</h2>
+          <h2 style={styles.sectionHeading}>About Me</h2>
           <p className='text-left'>
             I am a Full-Stack Web Developer with a Bachelor’s in Computer Science
             from California State University, Northridge (CSUN). I am an experienced problem-solver in Software
@@ -150,7 +153,7 @@ const Home = () => {
 
       <section className='mb-3 border-top'>
         <LaptopMacIcon style={styles.headingIcon} />
-        <h2 style={{ textTransform: 'uppercase' }}>Work Experience</h2>
+        <h2 style={styles.sectionHeading}>Work Experience</h2>
         <Row xs={1} md={2} className='text-left'>
           <Col className='d-flex justify-content-center'>
             <Card style={{ width: '100%' }}>
@@ -242,7 +245,10 @@ const Home = () => {
             (<Col className='mb-3'><ProjectCard data={project} /></Col>)
           )}
         </Row>
-        <h3>Here are a few design projects I've worked on recently. Want to see more?</h3>
+        <h3>
+          Here are a few design projects I've worked on recently. 
+          <span style={{color: '#2d6a4f'}}>Want to see more?</span>
+        </h3>
         {/* <div className='d-flex justify-content-center mt-3'>
           <Badge pill style={{ backgroundColor: '#40916C', borderColor: '#40916C' }}>
             <Link to='/portfolio' className='m-2'

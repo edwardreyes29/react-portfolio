@@ -22,10 +22,9 @@ const ProjectModal = ({hoverState, data}) => {
   }
   return (
     <>
-      {console.log(data)}
       <Button variant="outline-light" onClick={handleShow}>
-        <InfoIcon />
-        <span className='ml-1'> Learn more</span>
+        <InfoIcon style={{fontSize: '1vw'}}/>
+        <span className='ml-1' style={{fontSize: '1vw'}}>Learn more</span>
       </Button>
 
       <Modal 
@@ -47,8 +46,7 @@ const ProjectModal = ({hoverState, data}) => {
             <a
               href={data.links.deployed} target='_blank'
               style={{ color: '#fff' }}
-              className='ml-1'
-            >
+              className='ml-1'>
               Website
             </a>
           </div>
@@ -57,8 +55,7 @@ const ProjectModal = ({hoverState, data}) => {
             <a 
               href={data.links.github} target='_blank'
               style={{ color: '#fff' }}
-              className='ml-1'
-            >
+              className='ml-1'>
               GitHub
             </a>
           </div>

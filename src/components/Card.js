@@ -11,7 +11,9 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 const ProjectCard = ({ data }) => {
   const [hover, setHover] = useState(false);
   const [close, setClose] = useState(false);
+  const [screenWidth, setScreenWidth] = useState();
   useEffect(() => {
+    setScreenWidth(window.innerWidth);
     if (close) {
       setClose(false);
       setHover(false);
@@ -49,15 +51,13 @@ const ProjectCard = ({ data }) => {
 
   return (
     <Card className="text-white">
-      {/* {console.log(data)} */}
-      {/* {console.log(data.images)} */}
       <Card.Img src={data.images[0]} alt="Card image" />
       <Card.ImgOverlay className='image-overlay'
         style={cardStyle}
         onMouseEnter={hoverTrue} onMouseLeave={hoverFalse}
       >
-          <Card.Title>{data.name}</Card.Title>
-          <Card.Text>{data.description}</Card.Text>
+          <Card.Title style={{fontSize: '1.4vw'}}>{data.name}</Card.Title>
+          <Card.Text style={{fontSize: '1vw'}}>{data.description}</Card.Text>
           <Row className='mb-2'>
             <Col>
               <Modal 
@@ -68,24 +68,22 @@ const ProjectCard = ({ data }) => {
             <Col>
               {data.links.deployed && (
                 <Button variant='outline-light'>
-                  <LaunchIcon />
+                  <LaunchIcon style={{fontSize: '1vw'}}/>
                   <a
                     href={data.links.deployed} target='_blank'
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                    className='ml-1'
-                  >
+                    style={{ textDecoration: 'none', color: 'inherit', fontSize: '1vw'}}
+                    className='ml-1'>
                     Website
                   </a>
                 </Button>
               )}
               {data.links.youtube && (
                 <Button variant='outline-light'>
-                  <YouTubeIcon />
+                  <YouTubeIcon style={{fontSize: '1vw'}}/>
                   <a
                     href={data.links.youtube} target='_blank'
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                    className='ml-1'
-                  >
+                    style={{ textDecoration: 'none', color: 'inherit', fontSize: '1vw'}}
+                    className='ml-1'>
                     Demo
                   </a>
                 </Button>
